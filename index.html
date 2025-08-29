@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Simpson 3D — Catch the Donut</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- HUD (Header Display) -->
+    <header class="hud">
+      <div class="hud-left">
+        <h1 class="title">Simpson 3D: Catch the Donut</h1>
+        <p class="subtitle">Hit the donut, avoid the bombs. 60 seconds. Go!</p>
+      </div>
+      <div class="hud-right">
+        <div class="stat">
+          <span class="label">Score</span>
+          <span id="score" class="value">0</span>
+        </div>
+        <div class="stat">
+          <span class="label">Time</span>
+          <span id="time" class="value">60</span>
+        </div>
+        <div class="stat">
+          <span class="label">Health</span>
+          <span id="health" class="value">3</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Game Stage -->
+    <main class="stage">
+      <div id="webgl" aria-label="3D game canvas" role="img"></div>
+
+      <!-- Overlay Before Start -->
+      <section id="overlay" class="overlay">
+        <div class="card">
+          <h2 class="card-title">Catch the Donut</h2>
+          <ul class="instructions">
+            <li>Click the donut to score points (+10)</li>
+            <li>Avoid bombs (−1 health)</li>
+            <li>Game lasts 60 seconds</li>
+          </ul>
+          <button id="startBtn" class="btn">Start Game</button>
+        </div>
+      </section>
+
+      <!-- Overlay Game Over -->
+      <section id="gameOver" class="overlay hidden" aria-live="polite">
+        <div class="card">
+          <h2 class="card-title">Game Over</h2>
+          <p class="final-score">
+            Your Score: <strong id="finalScore">0</strong>
+          </p>
+          <button id="restartBtn" class="btn">Play Again</button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <small>Made with plain HTML, CSS, and JavaScript + Three.js</small>
+    </footer>
+
+    <!-- Load Three.js (global) -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <!-- Your game logic -->
+    <script src="app.js"></script>
+  </body>
+</html>
